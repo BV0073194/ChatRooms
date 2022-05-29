@@ -1,0 +1,30 @@
+body{
+  background: #242321;
+  color: #04d13b;
+  font-family: 'Segoe UI';
+}
+
+.auth-button {
+  background: #04d13b;;
+  border-radius: 3px;
+  border: none;
+  font-size: 20px;
+  padding: 0.5em;
+  color: #242321;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+.container {
+  height: 81vh;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

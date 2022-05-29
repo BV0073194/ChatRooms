@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head class="rScroll">
+    <title> ChatRooms - Update Logs </title>
+    <link rel="icon" href="https://chatapppremuim.proxyxyz.repl.co/logo/CH_32x32_logo.png" sizes="32x32">
+    <link rel="icon" href="https://chatapppremuim.proxyxyz.repl.co/logo/CH_64x64_logo.png" sizes="64x64">
+    <link rel="icon" type="image/x-icon" href="">
+    <meta name = "charset" charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width">
+    <meta name="description" content="ChatRooms allows you to communicate with your friends anywhere in the world!"/>
+    <link rel="stylesheet" href="../hidebar.css">
+    <link rel = "stylesheet" type = "text/css" href = "../server_rooms/style.css">
+    <script src= "/socket.io/socket.io.js"></script>
+  </head>
+  <body onload = "onload()" onbeforeunload="Disconnect()" style="resize: none;">
+    <div id = "Main">
+      <h1 id = "Title"> ChatRooms - Update Logs </h1>
+      <p>☢️ : Massive Change</p>
+      <p>⛔ : Major Change</p>
+      <p>⚠️ : Minor Change</p>
+      <br>
+      <p>Tip: Scroll down for more!</p>
+      <div style="width: 100%; height: 200px; overflow: scroll;">
+        <p>☢️ 5/16/2022 5:45pm PDT >> An O-Auth has been added as to make ChatRooms more secure, but in order to use ChatRooms you will now need a replit account! </p>
+        <p>⚠️ 4/27/2022 5:28pm PDT >> New update was pushed by the developer to view timing for moderation.</p>
+        <p>⚠️ 4/26/2022 11:51am PDT >> New update was pushed by the developer.</p>
+        <p>☢️ 4/26/2022 12:00pm PDT >> Domain name was changed from "https://chatapppremuim.proxyxyz.repl.co" to "https://chatrooms.proxyxyz.repl.co".</p>
+        <p>⚠️ 4/25/2022 5:20pm PDT >> Minor adjustments to the update logs page.</p>
+        <p>⛔ 4/25/2022 5:13pm PDT >> Warning message was created for warning users about the migration of the domain that occured on 4/26/2022 @ 12:00pm PDT.</p>
+        <p>⚠️ 4/25/2022 5:10pm PDT >> New update was released from the server side updater.</p>
+        <p>⚠️ 4/25/2022 5:06pm PDT >> New update was pushed by the developer.</p>
+        <p>☢️ 11/21/2021 7:30pm PDT >> OUR INITIAL LAUNCH!!!</p>
+      </div>
+      <script>
+        function onload(){
+          if(window.location == window.parent.location){
+            document.getElementById("applauncher").hidden = false;
+          } else {
+            document.getElementById("applauncher").hidden = true;
+          }
+        }
+      </script>
+      <div style="height: 15px;"></div>
+      <pre><a style="color: #04d13b; text-decoration: none;" href="javascript:window.location.replace(document.referrer);"> Return to ChatRooms main page! </a>  <a id="applauncher" style="color: #04d13b; text-decoration: none;" href="javascript:window.location.replace('https://chatroomsapp.proxyxyz.repl.co/'); window.open('', '_self', ''); window.close();"> LAUNCH APP! </a>
+      <div style="height: 20px;"></div>
+  </body>
+</html>

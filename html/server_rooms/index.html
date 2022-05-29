@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html class="rScroll">
+  <head>
+    <title> ChatRooms - Chat! </title>
+    <link rel="icon" href="../logo/CH_32x32_logo.png" sizes="32x32">
+    <link rel="icon" href="../logo/CH_64x64_logo.png" sizes="64x64">
+    <link rel="icon" type="image/x-icon" href="">
+    <meta name = "charset" charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width">
+    <meta name="description" content="ChatRooms allows you to communicate with your friends anywhere in the world!"/>
+    <link rel="stylesheet" href="../hidebar.css">
+    <link rel = "stylesheet" type = "text/css" href = "../server_rooms/style.css">
+    <script src = "../server_rooms/script.js"></script>
+    <script src= "/socket.io/socket.io.js"></script>
+  </head>
+  <body onload = "onload()" onbeforeunload="Disconnect()" style="resize: none;">
+    <div id = "Main">
+      <audio id = "DingS" src = "../server_rooms/Ding.mp3"> </audio>
+      <audio id = "ConnS" src = "../server_rooms/Connect.mp3"> </audio>
+      <div>
+        <pre style="font-size: 20px;"><a style="color: #04d13b; text-decoration: none;" href="../">Home</a>  <a style="color: #04d13b; text-decoration: none;" href="../updates">Updates</a>  <a style="color: #04d13b; text-decoration: none;" href="javascript: logout();">Logout</a>  <a id="applauncher" style="color: #04d13b; text-decoration: none;" href="javascript: window.location.replace('https://chatroomsapp.proxyxyz.repl.co/'); window.open('', '_self', ''); window.close();">App</a></pre>
+        <script>
+          function logout(){
+            var win = window.open("https://repl.it/logout"); 
+            setTimeout(function () {win.close();window.location.replace('/logout');}, 5);
+          } 
+        </script>
+      </div>
+      <h1 id = "Title"> ChatRooms </h1>
+      <div id = "AccessPort">
+        <label id = "NameLabel"> Username > </label>
+        <input id = "NameInput" placeholder = "type a username here" type = "text">
+        <script>
+          var input = document.getElementById("NameInput");
+          // Execute a function when the user releases a key on the keyboard
+          input.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+              if(usernameInput.value.length < 401){
+                Connect();
+              }
+              else{
+                window.alert("please limit characters to 400.")
+              }
+            }
+          });
+
+          var input2 = document.getElementById("IDInput");
+          // Execute a function when the user releases a key on the keyboard
+          input2.addEventListener("keyup", function(event2) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event2.keyCode === 13) {
+              if(usernameInput.value.length < 401){
+                Connect();
+              }
+              else{
+                window.alert("please limit characters to 400.")
+              }
+            }
+          });
+        </script>
+        <br><br>
+        <label id = "IDLabel"> Chatroom > </label>
+        <input id = "IDInput" placeholder = "type a room here" type = "text">
+        <input id = "ConnectButton" class = "Button" type = "submit" value = "Connect" onclick = "Connect()">
+      </div>
+      <h2 id = "RoomID"> Chatroom : None </h2>
+      <div id = "Chat">
+        <div id = "MessageBox" class = "Message" style="width: 100%; height: 350px; overflow: scroll;"></div>
+      </div>
+      <label style="margin: 35px;" id = "MessageLabel"> Message: </label>
+      <input id = "ComposedMessage" type = "text">
+      <script>
+          var input = document.getElementById("ComposedMessage");
+          // Execute a function when the user releases a key on the keyboard
+          input.addEventListener("keyup", function(event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+              dingSound = document.getElementById("DingS");
+              Send();
+              messageInput.value = "";
+            }
+          });
+      </script>
+      <input id = "SendMessage" onclick="Send()" value = "Send" class = "Button" type = "submit">
+      <br><br>
+      <input id = "scrollLatest" onclick="scrollLatest()" value = "Scroll to Latest" class = "Button" type = "submit">
+      <br><br>
+    </div>
+    <script>
+      function scrollLatest(){
+        var objDiv = document.getElementById("MessageBox");
+        objDiv.scrollTop = objDiv.scrollHeight;
+      }
+    </script>
+  </body>
+</html>

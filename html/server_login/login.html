@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="rScroll">
+   <head>
+      <meta name = "charset" charset = "utf-8">
+      <meta name = "viewport" content = "width=device-width">
+      <meta name="description" content="ChatRooms allows you to communicate with your friends anywhere in the world!"/>
+      <link rel="stylesheet" href="../server_login/login.css">
+      <link rel="stylesheet" href="../hidebar.css">
+      <link rel="icon" href="../logo/CH_32x32_logo.png" sizes="32x32">
+      <link rel="icon" href="../logo/CH_64x64_logo.png" sizes="64x64">
+      <link rel="icon" type="image/x-icon" href="">
+      <title>ChatRooms - Login</title>
+   </head>
+   <body class="body" onload = "onload()">
+      <h1 style="text-align: center;"> PLEASE LOGIN TO CONTINUE TO CHATROOMS </h>
+      <script src='/socket.io/socket.io.js'></script>
+      <script>
+         var socket = io();
+         function Authed(){
+           socket.emit('auth', socket.id);
+           window.location.reload();
+         }
+      </script>
+      <div id="replit-auth-error-cont" class="replit-auth-error"></div>
+      <div class="container"><div class="center"><button id="auth-btn" class="auth-button">Login Using Replit</button></div></div>
+     <div style="text-align: center;"> FOR UPDATES: <a style="text-decoration:none; color:#04d13b;" href="/updates">UPDATE LOG</a></div>
+     <div style="text-align: center;" id="applauncher"> LAUNCH APP: <a style="text-decoration:none; color:#04d13b;" href="javascript: window.location.replace('https://chatroomsapp.proxyxyz.repl.co/'); window.open('', '_self', ''); window.close();">HERE!</a></div>
+      <script authed="Authed();" src="server_login/login.js"></script>
+      <!-- src="https://auth.turbio.repl.co/script.js" -->
+      <!-- The repl auth script -->
+   </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "chatrooms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.1",
+    "forever-monitor": "^3.0.3",
+    "helmet": "^4.6.0",
+    "js-cookie": "^3.0.1",
+    "open": "^8.4.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
